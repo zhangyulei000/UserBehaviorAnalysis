@@ -6,4 +6,4 @@ Feature:
 1.Real-time statistics of popular categories of e-commerce projects  
 2.Real-time statistics of popular commodity of e-commerce projects  
 3.Real-time statistics of PV of e-commerce projects  
-4.eal-time statistics of UV of e-commerce projects  
+4.Real-time statistics of UV of e-commerce projects  
