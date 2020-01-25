@@ -41,7 +41,9 @@ object UniqueVisitor {
 class UvCountByWindow() extends AllWindowFunction[UserBehavior, UvCount, TimeWindow]{
   override def apply(window: TimeWindow, input: Iterable[UserBehavior], out: Collector[UvCount]): Unit = {
     // 定义一个scala set 用于保存 所有的数据userId并去重
-    var idSet: Set[Long] = Set[Long]() //set默认是不可变的， 不重复的集合
+    //set默认是不可变的， 不重复的集合, 但是存在的问题是 数据量大，内存会爆掉
+    //优化方法：避免内存容量的问题，将是否存在集合中，用一个二进制位保存到位图中，从而压缩存储（布隆过滤器）
+    var idSet: Set[Long] = Set[Long]()
     //把当前窗口所有的数据id 手机到set中， 最后输出set的大小
     for(userBehavior <- input){
       idSet += userBehavior.userId
