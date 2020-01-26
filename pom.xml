@@ -14,6 +14,7 @@
       <module>MarketAnalysis</module>
       <module>LoginFailDetect</module>
       <module>OrderPayDetect</module>
+      <module>TransactionMatchDetect</module>
   </modules>
 
   <name>UserBehaviorAnalysis</name>
